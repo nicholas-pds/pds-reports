@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>EFF Daily - PDS</title>
     <style>
         body {
@@ -15,10 +15,21 @@
             text-align: center;
             color: #333;
         }
+        /* Responsive iframe container */
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio; adjust as needed */
+            overflow: hidden;
+        }
         iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             border: none;
             width: 100%;
-            height: 700px;
+            height: 100%;
         }
         .button-container {
             text-align: center;
@@ -31,6 +42,7 @@
             text-decoration: none;
             border-radius: 5px;
             margin: 0 10px;
+            font-size: 16px;
         }
         .back-button {
             background-color: #007BFF;
@@ -52,6 +64,20 @@
         .download-button:hover {
             background-color: #c82333;
         }
+        /* Mobile adjustments */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            .iframe-container {
+                padding-bottom: 75%; /* Adjust aspect ratio for mobile */
+            }
+            .back-button, .refresh-button, .download-button {
+                padding: 8px 15px;
+                font-size: 14px;
+                margin: 5px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -61,18 +87,26 @@
         <button class="refresh-button" onclick="window.location.reload();" aria-label="Refresh the EFF report">Refresh</button>
         <button class="download-button" onclick="downloadPDF();" aria-label="Download report as PDF">Download as PDF</button>
     </div>
-    <iframe width="100%" height="700" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRs4ON8mHrGWhJrLopi4sbVSK4523bpEYgjrgf1JZ6mU3JIJyKvv1-syu5a43ho31iwO0OZTxEV7OyF/pubhtml?gid=1132033818&single=true&widget=true&headers=false"></iframe>
+    <div class="iframe-container">
+        <iframe
+            scrolling="yes"
+            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRs4ON8mHrGWhJrLopi4sbVSK4523bpEYgjrgf1JZ6mU3JIJyKvv1-syu5a43ho31iwO0OZTxEV7OyF/pubhtml?gid=1132033818&single=true&widget=true&headers=false">
+        </iframe>
+    </div>
 
     <script>
         function downloadPDF() {
-            // Extract the spreadsheet ID and GID from the iframe URL
             const spreadsheetId = "2PACX-1vRs4ON8mHrGWhJrLopi4sbVSK4523bpEYgjrgf1JZ6mU3JIJyKvv1-syu5a43ho31iwO0OZTxEV7OyF";
             const gid = "1132033818";
-            // Construct the Google Sheets PDF export URL
             const pdfUrl = `https://docs.google.com/spreadsheets/d/e/${spreadsheetId}/pub?gid=${gid}&single=true&output=pdf`;
-            // Open the PDF URL in a new tab/window (browser will prompt download)
             window.open(pdfUrl, '_blank');
         }
+
+        // Optional: Dynamically adjust iframe height based on content (if supported by Google Sheets)
+        window.addEventListener('resize', () => {
+            const iframe = document.querySelector('iframe');
+            iframe.style.height = `${window.innerHeight * 0.7}px`; // 70% of viewport height
+        });
     </script>
 </body>
 </html>
