@@ -35,4 +35,4 @@ root/
 
 1. **Clone the Repository**
 ```bash
-git clone https://github.com/[your-username]/[repository-name].git
+git clone https://github.com/nicholas-pds/pds-reports.git
