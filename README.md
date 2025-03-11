@@ -23,10 +23,11 @@ This is a simple website hosted on GitHub Pages that displays reports sourced fr
 ```bash
 root/
 │
-├── index.html          # Main homepage
-├── rushcases.html      # Cases Leaving Today report page
+├── index.html         # Main homepage
+├── rushcases.html     # Cases Leaving Today report page
 ├── eff.html           # Daily Huddle EFF report page
 ├── eff2.html          # EFF Report Manager Meeting page
+├── remake.html        # remake report page
 ├── pds logo 1.jpg     # Header image
 └── README.md          # This file
 ```

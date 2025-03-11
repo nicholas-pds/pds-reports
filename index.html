@@ -14,16 +14,24 @@
         }
         h1 {
             color: #333;
+            font-size: 1.8em;
+        }
+        p {
+            margin-bottom: 20px;
         }
         .container {
-            display: flex; /* Use flexbox for three-column layout */
-            justify-content: space-between; /* Spread columns apart */
-            max-width: 1200px; /* Optional: limit width */
-            margin: 0 auto; /* Center the container */
+            display: flex;
+            flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 20px; /* Add spacing between columns */
         }
         .column {
-            width: 30%; /* Each column takes up roughly a third of the space */
-            text-align: left; /* Align content to the left within columns */
+            flex: 1; /* Flexible growth */
+            min-width: 250px; /* Minimum width before wrapping */
+            text-align: left;
+            margin-bottom: 20px;
         }
         h2 {
             color: #333;
@@ -31,23 +39,55 @@
             margin-bottom: 10px;
         }
         a {
-            display: block; /* Stack buttons vertically */
-            margin: 10px 0; /* Vertical spacing between buttons */
+            display: block;
+            margin: 10px 0;
             padding: 10px 20px;
             background-color: #007BFF;
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            width: 200px; /* Uniform width */
+            width: 100%; /* Full width of container */
+            max-width: 300px; /* Cap the maximum width */
+            box-sizing: border-box; /* Include padding in width */
         }
         a:hover {
             background-color: #0056b3;
         }
-        /* CSS for the image */
         .header-image {
-            max-width: 20%; /* Scales with screen */
-            height: auto;    /* Maintains aspect ratio */
-            margin-bottom: 20px; /* Space below image */
+            max-width: 20%;
+            height: auto;
+            margin-bottom: 20px;
+            min-width: 100px; /* Prevent image from getting too small */
+        }
+
+        /* Media Queries for Mobile */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column; /* Stack columns vertically */
+                align-items: center;
+            }
+            .column {
+                width: 100%; /* Full width on mobile */
+                max-width: 400px; /* Limit column width */
+            }
+            .header-image {
+                max-width: 40%; /* Larger image on mobile */
+            }
+            h1 {
+                font-size: 1.5em; /* Slightly smaller heading */
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 10px; /* Less padding on very small screens */
+            }
+            .header-image {
+                max-width: 50%;
+            }
+            a {
+                padding: 8px 15px; /* Slightly smaller buttons */
+            }
         }
     </style>
 </head>
