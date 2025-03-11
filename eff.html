@@ -24,7 +24,7 @@
             text-align: center;
             margin: 20px 0;
         }
-        .back-button, .refresh-button {
+        .back-button, .refresh-button, .download-button {
             display: inline-block;
             padding: 10px 20px;
             color: white;
@@ -45,6 +45,13 @@
         .refresh-button:hover {
             background-color: #218838;
         }
+        .download-button {
+            background-color: #dc3545;
+            cursor: pointer;
+        }
+        .download-button:hover {
+            background-color: #c82333;
+        }
     </style>
 </head>
 <body>
@@ -52,7 +59,20 @@
     <div class="button-container">
         <a href="index.html" class="back-button" aria-label="Return to home page">Back to Home</a>
         <button class="refresh-button" onclick="window.location.reload();" aria-label="Refresh the EFF report">Refresh</button>
+        <button class="download-button" onclick="downloadPDF();" aria-label="Download report as PDF">Download as PDF</button>
     </div>
-    <iframe width="100%" height="700" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRs4ON8mHrGWhJrLopi4sbVSK4523bpEYgjrgf1JZ6mU3JIJyKvv1-syu5a43ho31iwO0OZTxEV7OyF/pubhtml?gid=1132033818&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+    <iframe width="100%" height="700" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRs4ON8mHrGWhJrLopi4sbVSK4523bpEYgjrgf1JZ6mU3JIJyKvv1-syu5a43ho31iwO0OZTxEV7OyF/pubhtml?gid=1132033818&single=true&widget=true&headers=false"></iframe>
+
+    <script>
+        function downloadPDF() {
+            // Extract the spreadsheet ID and GID from the iframe URL
+            const spreadsheetId = "2PACX-1vRs4ON8mHrGWhJrLopi4sbVSK4523bpEYgjrgf1JZ6mU3JIJyKvv1-syu5a43ho31iwO0OZTxEV7OyF";
+            const gid = "1132033818";
+            // Construct the Google Sheets PDF export URL
+            const pdfUrl = `https://docs.google.com/spreadsheets/d/e/${spreadsheetId}/pub?gid=${gid}&single=true&output=pdf`;
+            // Open the PDF URL in a new tab/window (browser will prompt download)
+            window.open(pdfUrl, '_blank');
+        }
+    </script>
 </body>
 </html>
