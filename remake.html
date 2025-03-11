@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remake Report Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        iframe {
+            border: none;
+            width: 100%;
+            height: 700px;
+        }
+        .button-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .back-button, .refresh-button {
+            display: inline-block;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 0 10px;
+        }
+        .back-button {
+            background-color: #007BFF;
+        }
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+        .refresh-button {
+            background-color: #28a745;
+            cursor: pointer;
+        }
+        .refresh-button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>Remake Report</h1>
+    <div class="button-container">
+        <a href="index.html" class="back-button" aria-label="Return to home page">Back to Home</a>
+        <button class="refresh-button" onclick="window.location.reload();" aria-label="Refresh the Remake report">Refresh</button>
+    </div>
+    <iframe width="100%" height="700" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCQvfJEfIG_zuQPXpW5S4Kp4GlGwvhigi9R8h0TXcs6auwlMHM_fUjJS9A_M7gJmfBGGynHLVhOEos/pubhtml?gid=1315132540&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+</body>
+</html>

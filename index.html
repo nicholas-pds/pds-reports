@@ -15,33 +15,61 @@
         h1 {
             color: #333;
         }
+        .container {
+            display: flex; /* Use flexbox for three-column layout */
+            justify-content: space-between; /* Spread columns apart */
+            max-width: 1200px; /* Optional: limit width */
+            margin: 0 auto; /* Center the container */
+        }
+        .column {
+            width: 30%; /* Each column takes up roughly a third of the space */
+            text-align: left; /* Align content to the left within columns */
+        }
+        h2 {
+            color: #333;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
         a {
-            display: inline-block;
-            margin-top: 20px;
+            display: block; /* Stack buttons vertically */
+            margin: 10px 0; /* Vertical spacing between buttons */
             padding: 10px 20px;
             background-color: #007BFF;
             color: white;
             text-decoration: none;
             border-radius: 5px;
+            width: 200px; /* Uniform width */
         }
         a:hover {
             background-color: #0056b3;
         }
-        /* Add CSS for the image */
+        /* CSS for the image */
         .header-image {
-            max-width: 20%; /* Ensures it scales with the screen */
+            max-width: 20%; /* Scales with screen */
             height: auto;    /* Maintains aspect ratio */
-            margin-bottom: 20px; /* Adds space below the image */
+            margin-bottom: 20px; /* Space below image */
         }
     </style>
 </head>
 <body>
-    <!-- Add the image here -->
     <img src="pds logo 1.jpg" alt="Header Graphic" class="header-image">
     <h1>Welcome to PDS Reports</h1>
     <p>This site displays the reports. Click the report below to view.</p>
-    <a href="rushcases.html">Cases Leaving Today</a>
-    <a href="eff.html">Daily Huddle EFF Report</a>
-    <a href="eff2.html">EFF Report Manager Meeting</a>
+    
+    <div class="container">
+        <div class="column">
+            <h2>Production Floor Reports</h2>
+            <a href="rushcases.html">Cases Leaving Today</a>
+        </div>
+        <div class="column">
+            <h2>EFF Reports</h2>
+            <a href="eff.html">Daily Huddle EFF Report</a>
+            <a href="eff2.html">EFF Report Manager Meeting</a>
+        </div>
+        <div class="column">
+            <h2>Other Category Reports</h2>
+            <a href="remake.html">Remake Report</a>
+        </div>
+    </div>
 </body>
 </html>
