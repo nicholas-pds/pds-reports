@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Previous Day Numbers - PDS</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        /* Responsive iframe container */
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio; adjust as needed */
+            overflow: hidden;
+        }
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: none;
+            width: 100%;
+            height: 100%;
+        }
+        .button-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .back-button, .refresh-button, .download-button {
+            display: inline-block;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 0 10px;
+            font-size: 16px;
+        }
+        .back-button {
+            background-color: #007BFF;
+        }
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+        .refresh-button {
+            background-color: #28a745;
+            cursor: pointer;
+        }
+        .refresh-button:hover {
+            background-color: #218838;
+        }
+        .download-button {
+            background-color: #dc3545;
+            cursor: pointer;
+        }
+        .download-button:hover {
+            background-color: #c82333;
+        }
+        /* Mobile adjustments */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            .iframe-container {
+                padding-bottom: 75%; /* Adjust aspect ratio for mobile */
+            }
+            .back-button, .refresh-button, .download-button {
+                padding: 8px 15px;
+                font-size: 14px;
+                margin: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Previous Day Numbers</h1>
+    <div class="button-container">
+        <a href="index.html" class="back-button" aria-label="Return to home page">Back to Home</a>
+        <button class="refresh-button" onclick="window.location.reload();" aria-label="Refresh the Previous Day report">Refresh</button>
+        <button class="download-button" onclick="downloadPDF();" aria-label="Download report as PDF">Download as PDF</button>
+    </div>
+    <div class="iframe-container">
+        <iframe
+            scrolling="yes"
+            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSIYkBty2PG__Ny5pYzRCUsjNmvl0VIZnrP1kyhUij-Hh8891FkEPaDLrvfgFWgXwlncb01Yksp0cwx/pubhtml?gid=0&single=true&widget=true&headers=false">
+        </iframe>
+    </div>
+
+    <script>
+        function downloadPDF() {
+            const spreadsheetId = "2PACX-1vSIYkBty2PG__Ny5pYzRCUsjNmvl0VIZnrP1kyhUij-Hh8891FkEPaDLrvfgFWgXwlncb01Yksp0cwx";
+            const gid = "0";
+            const pdfUrl = `https://docs.google.com/spreadsheets/d/e/${spreadsheetId}/pub?gid=${gid}&single=true&output=pdf`;
+            window.open(pdfUrl, '_blank');
+        }
+
+        // Optional: Dynamically adjust iframe height based on content (if supported by Google Sheets)
+        window.addEventListener('resize', () => {
+            const iframe = document.querySelector('iframe');
+            iframe.style.height = `${window.innerHeight * 0.7}px`; // 70% of viewport height
+        });
+    </script>
+</body>
+</html>
