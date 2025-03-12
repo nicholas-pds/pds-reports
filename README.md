@@ -25,6 +25,7 @@ root/
 │
 ├── index.html         # Main homepage
 ├── rushcases.html     # Cases Leaving Today report page
+├── prevday.html       # Previous day overview report
 ├── eff.html           # Daily Huddle EFF report page
 ├── eff2.html          # EFF Report Manager Meeting page
 ├── remake.html        # remake report page
