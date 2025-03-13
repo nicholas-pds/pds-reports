@@ -21,15 +21,15 @@
         }
         .container {
             display: flex;
-            flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+            flex-wrap: wrap;
             justify-content: space-between;
             max-width: 1200px;
             margin: 0 auto;
-            gap: 20px; /* Add spacing between columns */
+            gap: 20px;
         }
         .column {
-            flex: 1; /* Flexible growth */
-            min-width: 250px; /* Minimum width before wrapping */
+            flex: 1;
+            min-width: 250px;
             text-align: left;
             margin-bottom: 20px;
         }
@@ -46,9 +46,9 @@
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            width: 100%; /* Full width of container */
-            max-width: 300px; /* Cap the maximum width */
-            box-sizing: border-box; /* Include padding in width */
+            width: 100%;
+            max-width: 300px;
+            box-sizing: border-box;
         }
         a:hover {
             background-color: #0056b3;
@@ -57,36 +57,36 @@
             max-width: 20%;
             height: auto;
             margin-bottom: 20px;
-            min-width: 100px; /* Prevent image from getting too small */
+            min-width: 100px;
         }
 
         /* Media Queries for Mobile */
         @media (max-width: 768px) {
             .container {
-                flex-direction: column; /* Stack columns vertically */
+                flex-direction: column;
                 align-items: center;
             }
             .column {
-                width: 100%; /* Full width on mobile */
-                max-width: 400px; /* Limit column width */
+                width: 100%;
+                max-width: 400px;
             }
             .header-image {
-                max-width: 40%; /* Larger image on mobile */
+                max-width: 40%;
             }
             h1 {
-                font-size: 1.5em; /* Slightly smaller heading */
+                font-size: 1.5em;
             }
         }
         
         @media (max-width: 480px) {
             body {
-                padding: 10px; /* Less padding on very small screens */
+                padding: 10px;
             }
             .header-image {
                 max-width: 50%;
             }
             a {
-                padding: 8px 15px; /* Slightly smaller buttons */
+                padding: 8px 15px;
             }
         }
     </style>
@@ -100,6 +100,7 @@
         <div class="column">
             <h2>Production Floor Reports</h2>
             <a href="rushcases.html">Cases Leaving Today</a>
+            <a href="rushcases2.html">Cases Leaving Today (Expanded)</a>
         </div>
         <div class="column">
             <h2>EFF Reports</h2>
