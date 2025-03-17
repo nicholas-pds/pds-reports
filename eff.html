@@ -98,7 +98,8 @@
         function downloadPDF() {
             const spreadsheetId = "2PACX-1vRs4ON8mHrGWhJrLopi4sbVSK4523bpEYgjrgf1JZ6mU3JIJyKvv1-syu5a43ho31iwO0OZTxEV7OyF";
             const gid = "1132033818";
-            const pdfUrl = `https://docs.google.com/spreadsheets/d/e/${spreadsheetId}/pub?gid=${gid}&single=true&output=pdf`;
+            //const pdfUrl = `https://docs.google.com/spreadsheets/d/e/${spreadsheetId}/pub?gid=${gid}&single=true&output=pdf`;
+            const pdfUrl = `https://docs.google.com/spreadsheets/d/e/${spreadsheetId}/pub?gid=${gid}&single=true&output=pdf&range=C7:J110&portrait=true&scale=2`;
             window.open(pdfUrl, '_blank');
         }
 
