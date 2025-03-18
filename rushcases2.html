@@ -24,17 +24,17 @@
             position: relative;
             width: 100%;
             max-width: 1600px;
+            height: 4000px; /* Set a very large height to ensure all content is visible */
             border: 2px solid #ddd;
             border-radius: 5px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             background-color: #fff;
-            /* Removed fixed height and overflow */
         }
         iframe {
             width: 100%;
-            height: 100%;
+            /* Removed height: 100% to respect the inline height attribute */
             border: none;
-            display: block; /* Ensures no extra spacing */
+            display: block;
         }
         .button-container {
             text-align: center;
@@ -72,7 +72,7 @@
     <div class="report-container">
         <iframe
             width="800" 
-            height="3000"  /* Increased significantly to ensure all content shows */
+            height="4000"  /* Set a very large height to ensure all content shows */
             src="https://lookerstudio.google.com/embed/reporting/c83633ba-7759-4ae5-8ded-abefb8eca3a4/page/UJvAF" 
             frameborder="0" 
             style="border:0" 
