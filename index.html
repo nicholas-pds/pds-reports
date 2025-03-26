@@ -20,18 +20,15 @@
             margin-bottom: 20px;
         }
         .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columns of equal width */
+            gap: 20px;
             max-width: 1200px;
             margin: 0 auto;
-            gap: 20px;
         }
-        .column {
-            flex: 1;
-            min-width: 250px;
+        .grid-item {
             text-align: left;
-            margin-bottom: 20px;
+            min-width: 250px;
         }
         h2 {
             color: #333;
@@ -63,16 +60,32 @@
             margin-left: auto;
             margin-right: 0;
         }
+        .empty-grid {
+            /* Empty grid items will still take up space */
+        }
+        .dummy-button {
+            display: block;
+            margin: 10px 0;
+            padding: 10px 20px;
+            background-color: #ccc;
+            color: #666;
+            text-decoration: none;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 300px;
+            box-sizing: border-box;
+            cursor: not-allowed;
+        }
 
         /* Media Queries for Mobile */
         @media (max-width: 768px) {
             .container {
-                flex-direction: column;
-                align-items: center;
+                grid-template-columns: 1fr; /* Single column on mobile */
             }
-            .column {
+            .grid-item {
                 width: 100%;
                 max-width: 400px;
+                margin: 0 auto; /* Center the items */
             }
             .header-image {
                 max-width: 40%;
@@ -104,23 +117,48 @@
     <p>This site displays the reports. Click the report below to view.</p>
     
     <div class="container">
-        <div class="column">
+        <!-- Grid 1 (Top Left) -->
+        <div class="grid-item">
             <h2>Production Floor Reports</h2>
             <a href="rushcases.html">Cases Leaving Today</a>
             <a href="rushcases2.html">DB Cases Leaving Today</a>
         </div>
-        <div class="column">
+        
+        <!-- Grid 2 (Top Middle) -->
+        <div class="grid-item">
             <h2>EFF Reports</h2>
             <a href="eff.html">Daily Huddle EFF Report</a>
             <a href="eff2.html">EFF Report Manager Meeting</a>
             <a href="eff3.html">DB EFF Daily</a>
         </div>
-        <div class="column">
+        
+        <!-- Grid 3 (Top Right) -->
+        <div class="grid-item">
+            <h2>Account Management</h2>
+            <a href="ammetrics.html">AM Metrics</a>
+        </div>
+        
+        <!-- Grid 4 (Bottom Left) -->
+        <div class="grid-item">
             <h2>Other Category Reports</h2>
             <a href="remake.html">Remake Report</a>
             <a href="prevday.html">Previous Day Overview</a>
             <a href="histlabprod.html">Hist Lab Production</a>
             <a href="histsales.html">Historical Sales</a>
+        </div>
+        
+        <!-- Grid 5 (Bottom Middle) -->
+        <div class="grid-item empty-grid">
+            <h2>Grid 5</h2>
+            <a class="dummy-button">In Development</a>
+            <a class="dummy-button">In Development</a>
+        </div>
+        
+        <!-- Grid 6 (Bottom Right) -->
+        <div class="grid-item empty-grid">
+            <h2>Grid 6</h2>
+            <a class="dummy-button">In Development</a>
+            <a class="dummy-button">In Development</a>
         </div>
     </div>
 </body>
