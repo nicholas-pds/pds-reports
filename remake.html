@@ -24,7 +24,7 @@
             text-align: center;
             margin: 20px 0;
         }
-        .back-button, .refresh-button {
+        .back-button, .refresh-button, .workbook-button {
             display: inline-block;
             padding: 10px 20px;
             color: white;
@@ -45,6 +45,12 @@
         .refresh-button:hover {
             background-color: #218838;
         }
+        .workbook-button {
+            background-color: #808080;
+        }
+        .workbook-button:hover {
+            background-color: #666666;
+        }
     </style>
 </head>
 <body>
@@ -52,7 +58,8 @@
     <div class="button-container">
         <a href="index.html" class="back-button" aria-label="Return to home page">Back to Home</a>
         <button class="refresh-button" onclick="window.location.reload();" aria-label="Refresh the Remake report">Refresh</button>
+        <a href="https://docs.google.com/spreadsheets/d/13fkXJnID9SpCxFi_JEkThn21jWUYT8PWizs1EJ4XbnE/edit?usp=sharing" class="workbook-button" aria-label="Link to Workbook">Link to Workbook</a>
     </div>
-    <iframe width="100%" height="1600" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCQvfJEfIG_zuQPXpW5S4Kp4GlGwvhigi9R8h0TXcs6auwlMHM_fUjJS9A_M7gJmfBGGynHLVhOEos/pubhtml?gid=1315132540&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+    <iframe width="100%" height="1600" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCQvfJEfIG_zuQPXpW5S4Kp4GlGwvhigi9R8h0TXcs6auwlMHM_fUjJS9A_M7gJmfBGGynHLVhOEos/pubhtml?gid=1315132540&single=true&widget=true&headers=false"></iframe>
 </body>
 </html>
