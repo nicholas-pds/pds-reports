@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>3D Inventory</title>
     <style>
         body {
@@ -26,7 +26,8 @@
             position: relative;
             width: 100%;
             max-width: 1600px;
-            height: 1650px;
+            height: 80vh; /* Use viewport height for responsiveness */
+            min-height: 400px; /* Minimum height for smaller screens */
             overflow: hidden;
             border: 2px solid #333; /* Darker border to match theme */
             border-radius: 5px;
@@ -37,6 +38,7 @@
             width: 100%;
             height: 100%;
             border: none;
+            display: block; /* Remove any default inline spacing */
         }
         .button-container {
             text-align: center;
@@ -50,23 +52,27 @@
             border-radius: 5px;
             margin: 0 10px;
             box-sizing: border-box;
+            transition: background-color 0.3s ease; /* Smooth hover transition */
         }
         .back-button {
             background-color: #A70A2D; /* Red accent color */
         }
-        .back-button:hover {
-            background-color: #8B0824; /* Darker red for hover */
+        .back-button:hover, .back-button:focus {
+            background-color: #8B0824; /* Darker red for hover/focus */
+            outline: none; /* Remove default outline */
         }
         .refresh-button {
             background-color: #A70A2D; /* Red accent color */
             cursor: pointer;
+            border: none; /* Ensure button has no default border */
         }
-        .refresh-button:hover {
-            background-color: #8B0824; /* Darker red for hover */
+        .refresh-button:hover, .refresh-button:focus {
+            background-color: #8B0824; /* Darker red for hover/focus */
+            outline: none; /* Remove default outline */
         }
 
-        /* Media Queries for Mobile */
-        @media (max-width: 768px) {
+        /* Media Queries for Tablets and Mobile */
+        @media (max-width: 768 slagspx) {
             body {
                 padding: 10px;
             }
@@ -74,13 +80,33 @@
                 font-size: 1.5em;
             }
             .report-container {
-                height: auto; /* Adjust for mobile */
+                height: 70vh; /* Slightly smaller for tablets */
+                min-height: 300px;
+            }
+            .back-button, .refresh-button {
+                padding: 12px 18px; /* Slightly larger for touch */
+                font-size: 0.9em;
             }
         }
 
         @media (max-width: 480px) {
+            h1 {
+                font-size: 1.3em;
+            }
+            .report-container {
+                height: 60vh; /* Adjusted for smaller screens */
+                min-height: 250px;
+            }
             .back-button, .refresh-button {
-                padding: 8px 15px;
+                padding: 10px 15px;
+                margin: 5px; /* Closer spacing for smaller screens */
+                font-size: 0.85em;
+            }
+            .button-container {
+                display: flex;
+                flex-direction: column; /* Stack buttons vertically on small screens */
+                align-items: center;
+                gap: 10px;
             }
         }
     </style>
@@ -89,12 +115,10 @@
     <h1>3D Inventory</h1>
     <div class="button-container">
         <a href="index.html" class="back-button" aria-label="Return to home page">Back to Home</a>
-        <button class="refresh-button" onclick="window.location.reload();" aria-label="Refresh the maintenance logs report">Refresh</button>
+        <button class="refresh-button" onclick="window.location.reload();" aria-label="Refresh the 3D inventory report">Refresh</button>
     </div>
     <div class="report-container">
         <iframe 
-            width="800" 
-            height="1600" 
             src="https://lookerstudio.google.com/embed/reporting/a3637331-224f-41eb-a975-73a04a2fdbfb/page/UILJF" 
             frameborder="0" 
             style="border:0" 
