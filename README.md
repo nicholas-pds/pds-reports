@@ -29,7 +29,7 @@ This is a lightweight website hosted on GitHub Pages, designed to display report
 root/
 │
 ├── index.html                     # Main homepage
-├── rushcases.html                 # Cases Leaving Today report page
+├── rushcases.html                 # Cases Leaving Today report page -- NOT CURRENTLY USED
 ├── rushcases2.html                # Dashboard view for Cases Leaving Today
 ├── prevday.html                   # Previous day overview report
 ├── eff.html                       # Daily Huddle EFF report page
