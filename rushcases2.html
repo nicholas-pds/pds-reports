@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Case Locations</title>
+    <title>Cases Leaving Today</title>
     <style>
         body {
             margin: 0;
@@ -21,7 +21,7 @@
         }
         .report-container {
             width: 100%;
-            max-width: 1200px;
+            max-width: 95vw; /* Scales to 95% of viewport width */
             border: 1px solid #ddd;
             border-radius: 0.25rem;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -30,6 +30,7 @@
         }
         iframe {
             width: 100%;
+            height: 6000px; /* Significantly increased height */
             border: none;
             display: block;
         }
@@ -61,10 +62,18 @@
         .refresh-button:hover {
             background-color: #218838;
         }
+        @media (max-width: 768px) {
+            .report-container {
+                max-width: 100vw; /* Full width on smaller screens */
+            }
+            iframe {
+                height: 4000px; /* Slightly reduced height for smaller screens */
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>Case Locations</h1>
+    <h1>Cases Leaving Today</h1>
     <div class="button-container">
         <a href="index.html" class="button back-button" aria-label="Return to home page">Back to Home</a>
         <button class="button refresh-button" onclick="window.location.reload()" aria-label="Refresh report">Refresh</button>
