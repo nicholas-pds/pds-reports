@@ -1,169 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDS Reports - Home</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 20px;
-            font-family: Arial, sans-serif;
-            background-color: #000; /* Changed to black background */
-            color: #fff; /* White text */
-            text-align: center;
-        }
-        h1 {
-            color: #fff; /* White text */
-            font-size: 1.8em;
-        }
-        p {
-            margin-bottom: 20px;
-            color: #fff; /* White text */
-        }
-        .container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 columns of equal width */
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .grid-item {
-            text-align: left;
-            min-width: 250px;
-        }
-        h2 {
-            color: #fff; /* White text */
-            font-size: 1.2em;
-            margin-bottom: 10px;
-        }
-        a {
-            display: block;
-            margin: 10px 0;
-            padding: 10px 20px;
-            background-color: #A70A2D; /* Red accent color */
-            color: #fff; /* White text */
-            text-decoration: none;
-            border-radius: 5px;
-            width: 100%;
-            max-width: 300px;
-            box-sizing: border-box;
-        }
-        a:hover {
-            background-color: #8B0824; /* Darker red for hover */
-        }
-        .header-image {
-            max-width: 20%;
-            height: auto;
-            margin-bottom: 20px;
-            min-width: 100px;
-        }
-        .right-align {
-            margin-left: auto;
-            margin-right: 0;
-        }
-        .empty-grid {
-            /* Empty grid items will still take up space */
-        }
-        .dummy-button {
-            display: block;
-            margin: 10px 0;
-            padding: 10px 20px;
-            background-color: #333; /* Dark gray for disabled buttons */
-            color: #999; /* Lighter gray text */
-            text-decoration: none;
-            border-radius: 5px;
-            width: 100%;
-            max-width: 300px;
-            box-sizing: border-box;
-            cursor: not-allowed;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDS Reports - Home</title>
+  <style>
+    /* Base Styles */
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+    }
 
-        /* Media Queries for Mobile */
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr; /* Single column on mobile */
-            }
-            .grid-item {
-                width: 100%;
-                max-width: 400px;
-                margin: 0 auto; /* Center the items */
-            }
-            .header-image {
-                max-width: 40%;
-            }
-            h1 {
-                font-size: 1.5em;
-            }
-            .right-align {
-                margin-left: 0;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            body {
-                padding: 10px;
-            }
-            .header-image {
-                max-width: 50%;
-            }
-            a {
-                padding: 8px 15px;
-            }
-        }
-    </style>
+    h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 30px;
+      font-size: 1.1em;
+    }
+
+    img.header-image {
+      max-width: 150px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    /* Grid Layout */
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-bottom: 40px;
+    }
+
+    .grid-item {
+      text-align: left;
+      padding: 10px;
+    }
+
+    .grid-item h2 {
+      font-size: 1.3em;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 5px;
+    }
+
+    /* Link Buttons */
+    a {
+      display: block;
+      margin: 10px 0;
+      padding: 12px 20px;
+      background-color: #A70A2D;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      max-width: 300px;
+      transition: background-color 0.3s ease;
+    }
+
+    a:hover {
+      background-color: #8B0824;
+    }
+
+    .dummy-button {
+      background-color: #333;
+      color: #999;
+      cursor: not-allowed;
+    }
+
+    /* Responsive Tweaks */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.6em;
+      }
+
+      .header-image {
+        max-width: 40%;
+      }
+
+      .grid-item {
+        text-align: center;
+      }
+
+      a {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 10px;
+      }
+
+      a {
+        padding: 10px 15px;
+      }
+
+      .header-image {
+        max-width: 60%;
+      }
+    }
+  </style>
 </head>
 <body>
-    <img src="PDS NEW Logo.png" alt="Header Graphic" class="header-image">
+  <header>
+    <img src="PDS NEW Logo.png" alt="PDS Company Logo" class="header-image" />
     <h1>Welcome to PDS Reports</h1>
-    <p>This site displays the reports. Click the report below to view.</p>
-    
-    <div class="container">
-        <!-- Grid 1 (Top Left) -->
-        <div class="grid-item">
-            <h2>Production Floor Reports</h2>
-            <!-- Version 1 
-            <a href="https://lookerstudio.google.com/reporting/56e02695-69e4-4ead-a91e-5b6363ea5032" target="_blank">Case Locations</a> 
-            -->
-            <a href="https://lookerstudio.google.com/reporting/01a5eb5c-1b0f-4862-b671-345c9504b176" target="_blank">Case Locations</a>
-            <a href="https://lookerstudio.google.com/reporting/88d1b34f-0c5b-46de-82e5-ee487d37fa4b" target="_blank">Internal Rejects</a>
-        </div>
-       
-        <!-- Grid 2 (Top Middle) -->
-        <div class="grid-item">
-            <h2>EFF Reports</h2>
-            <a href="https://docs.google.com/spreadsheets/d/1G9LTRqgh0YNpFTFzuX0reHJ_iGNyc0R7FABno5opNOY/edit?gid=1132033818#gid=1132033818&range=A1">Daily EFF Report</a>
-            <a href="https://docs.google.com/spreadsheets/d/1G9LTRqgh0YNpFTFzuX0reHJ_iGNyc0R7FABno5opNOY/edit?gid=1633031443#gid=1633031443&range=A1">Midday Update</a>
-            <a href="https://docs.google.com/spreadsheets/d/1G9LTRqgh0YNpFTFzuX0reHJ_iGNyc0R7FABno5opNOY/edit?gid=152887716#gid=152887716&range=B1">MM EFF Report</a>
-            <a href="https://lookerstudio.google.com/reporting/7b3a8712-a6cc-4c6e-8d7d-e44065206aa2">EFF Charts Performance Reviews</a>
+    <p>Access your business reports below.</p>
+  </header>
 
-        </div>
-        
-        <!-- Grid 3 (Top Right) -->
-        <div class="grid-item">
-            <h2>Account Management</h2>
-            <a href="ammetrics.html">AM Metrics</a>
-        </div>
-        
-        <!-- Grid 4 (Bottom Left) -->
-        <div class="grid-item empty-grid">
-            <h2>Time Off Calendar</h2>
-            <a href="https://docs.google.com/spreadsheets/d/1snCwPXV3CxthtMVKMvtjlg_Mtso4RBU2Chy8x2mxgUs/edit?gid=238511663#gid=238511663&range=C1:E1">Time Off Calendar</a>
-        </div>
-        
-        <!-- Grid 5 (Bottom Middle) -->
-        <div class="grid-item">
-            <h2>3D Manufacturing</h2>
-            <a href="3dinventory.html">3D Inventory</a>
-            <a href="https://docs.google.com/spreadsheets/d/1-S4GfDsXlfrJmEN_iQXXUp6Q0Ks-C9uUfdTxrXnyP78/edit?gid=1167572296#gid=1167572296&range=A1" target="_blank">Machine Logs</a>
-        </div>
-        
-        <!-- Grid 6 (Bottom Right) -->
-        <div class="grid-item empty-grid">
-            <h2>Grid 6</h2>
-            <a class="dummy-button">In Development</a>
-            <a class="dummy-button">In Development</a>
-        </div>
-    </div>
+  <main class="container">
+    <section class="grid-item" aria-label="Production Floor Reports">
+      <h2>Production Floor Reports</h2>
+      <a href="https://lookerstudio.google.com/reporting/01a5eb5c-1b0f-4862-b671-345c9504b176" target="_blank">Case Locations</a>
+      <a href="https://lookerstudio.google.com/reporting/88d1b34f-0c5b-46de-82e5-ee487d37fa4b" target="_blank">Internal Rejects</a>
+    </section>
+
+    <section class="grid-item" aria-label="EFF Reports">
+      <h2>EFF Reports</h2>
+      <a href="https://docs.google.com/spreadsheets/d/1G9LTRqgh0YNpFTFzuX0reHJ_iGNyc0R7FABno5opNOY/edit?gid=1132033818#gid=1132033818&range=A1" target="_blank">Daily EFF Report</a>
+      <a href="https://docs.google.com/spreadsheets/d/1G9LTRqgh0YNpFTFzuX0reHJ_iGNyc0R7FABno5opNOY/edit?gid=1633031443#gid=1633031443&range=A1" target="_blank">Midday Update</a>
+      <a href="https://docs.google.com/spreadsheets/d/1G9LTRqgh0YNpFTFzuX0reHJ_iGNyc0R7FABno5opNOY/edit?gid=152887716#gid=152887716&range=B1" target="_blank">MM EFF Report</a>
+      <a href="https://lookerstudio.google.com/reporting/7b3a8712-a6cc-4c6e-8d7d-e44065206aa2" target="_blank">EFF Charts Performance Reviews</a>
+    </section>
+
+    <section class="grid-item" aria-label="Account Management">
+      <h2>Account Management</h2>
+      <a href="ammetrics.html">AM Metrics</a>
+    </section>
+
+    <section class="grid-item" aria-label="Time Off Calendar">
+      <h2>Time Off Calendar</h2>
+      <a href="https://docs.google.com/spreadsheets/d/1snCwPXV3CxthtMVKMvtjlg_Mtso4RBU2Chy8x2mxgUs/edit?gid=238511663#gid=238511663&range=C1:E1" target="_blank">Time Off Calendar</a>
+    </section>
+
+    <section class="grid-item" aria-label="3D Manufacturing">
+      <h2>3D Manufacturing</h2>
+      <a href="3dinventory.html">3D Inventory</a>
+      <a href="https://docs.google.com/spreadsheets/d/1-S4GfDsXlfrJmEN_iQXXUp6Q0Ks-C9uUfdTxrXnyP78/edit?gid=1167572296#gid=1167572296&range=A1" target="_blank">Machine Logs</a>
+    </section>
+
+    <section class="grid-item" aria-label="Coming Soon">
+      <h2>Coming Soon</h2>
+      <a class="dummy-button">In Development</a>
+      <a class="dummy-button">In Development</a>
+    </section>
+  </main>
 </body>
 </html>
